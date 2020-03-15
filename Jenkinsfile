@@ -21,5 +21,6 @@ pipeline {
                 sh 'git push -u origin master' 
             }
         }
+        //test
     }
 }
