@@ -18,7 +18,7 @@ pipeline {
         }
         stage('deploy') {
             steps {
-                sh './mvnw deploy'
+                echo 'deploy'
             }
         }
     }
