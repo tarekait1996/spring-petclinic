@@ -21,13 +21,13 @@ pipeline {
                 sh './mvnw deploy'
             }
         }
-        post {
-            success {
-                slackSend(color: '#00FF00', message: "Succesful: job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL})")
-            }
-            failure {
-                slackSend(color: '#FFF00', message: "Started: job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL})")
-            }
+    }
+    post {
+        success {
+            slackSend(color: '#00FF00', message: "Succesful: job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL})")
+        }
+        failure {
+            slackSend(color: '#FFF00', message: "Started: job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL})")
         }
     }
 }
