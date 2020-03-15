@@ -6,5 +6,20 @@ pipeline {
                 sh './mvnw package' 
             }
         }
+        stage('test') {
+            steps {
+                sh './mvnw test' 
+            }
+        }
+        stage('package') {
+            steps {
+                sh './mvnw package' 
+            }
+        }
+        stage('deploy') {
+            steps {
+                sh 'git push -u origin master' 
+            }
+        }
     }
 }
