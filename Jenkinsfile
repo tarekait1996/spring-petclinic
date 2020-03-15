@@ -18,9 +18,8 @@ pipeline {
         }
         stage('deploy') {
             steps {
-                sh 'git push -u origin master' 
+                echo 'deploying' 
             }
         }
-        //test
     }
 }
